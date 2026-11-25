@@ -30,7 +30,8 @@ jobs:
           ACR_NAME=$(az acr list --resource-group "$RESOURCE_GROUP" --query "[?name=='spectredevacrelvf5hav'].name" -o tsv)
           test -n "$ACR_NAME"
           az acr update --name "$ACR_NAME" --resource-group "$RESOURCE_GROUP" --public-network-enabled true
-          az acr network-rule add --name "$ACR_NAME" --resource-group "$RESOURCE_GROUP" --ip-address "0.0.0.0/0"
+          ACR_ID=$(az acr show --name "$ACR_NAME" --resource-group "$RESOURCE_GROUP" --query id -o tsv)
+          az resource update --ids "$ACR_ID" --set properties.networkRuleSet.defaultAction=Allow
           az acr build --registry "$ACR_NAME" --image "spectre:${{ github.sha }}" --file Dockerfile.azure .
           DIGEST=$(az acr repository show --name "$ACR_NAME" --image "spectre:${{ github.sha }}" --query digest -o tsv)
           echo "IMAGE=$ACR_NAME.azurecr.io/spectre@$DIGEST" >> "$GITHUB_ENV"
@@ -80,5 +81,6 @@ jobs:
         shell: bash
         run: |
           ACR_NAME=$(az acr list --resource-group "$RESOURCE_GROUP" --query "[?name=='spectredevacrelvf5hav'].name" -o tsv)
-          az acr network-rule remove --name "$ACR_NAME" --resource-group "$RESOURCE_GROUP" --ip-address "0.0.0.0/0" || true
+          ACR_ID=$(az acr show --name "$ACR_NAME" --resource-group "$RESOURCE_GROUP" --query id -o tsv)
+          az resource update --ids "$ACR_ID" --set properties.networkRuleSet.defaultAction=Deny
           az acr update --name "$ACR_NAME" --resource-group "$RESOURCE_GROUP" --public-network-enabled false
