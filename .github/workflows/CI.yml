@@ -1,0 +1,42 @@
+name: Spectre AI CI
+
+on:
+  push:
+    branches: [azure-deployment]
+  pull_request:
+    branches: [azure-deployment]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.26.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run typecheck
+      - run: pnpm --filter @workspace/sentinel build
+      - run: pnpm --filter @workspace/api-server build
+      - run: |
+          node artifacts/api-server/tests/team-auth-api.mjs
+          node artifacts/api-server/tests/gateway-security.mjs
+      - run: pnpm audit --prod
+        continue-on-error: true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: spectre-build
+          path:
+            artifacts/
+            lib/
+            package.json
+            pnpm-lock.yaml
+            pnpm-workspace.yaml
+            Dockerfile.azure
