@@ -1,0 +1,10 @@
+environment                = "prod"
+location                   = "westeurope"
+postgres_sku               = "GP_Standard_D4s_v3"
+postgres_storage_mb        = 131072
+container_app_min_replicas = 2
+container_app_max_replicas = 10
+container_app_cpu          = 2
+container_app_memory       = "4Gi"
+acr_sku                    = "Premium"
+enable_front_door          = true

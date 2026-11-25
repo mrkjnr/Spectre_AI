@@ -1,0 +1,17 @@
+environment                     = "dev"
+location                        = "westeurope"
+project                         = "spectre"
+postgres_sku                    = "B_Standard_B1ms"
+postgres_storage_mb             = 32768
+container_app_min_replicas      = 1
+container_app_max_replicas      = 3
+container_app_cpu               = 1
+container_app_memory            = "2Gi"
+acr_sku                         = "Premium"
+public_network_access_enabled   = false
+enable_front_door               = false
+key_vault_administrator_object_ids = []
+tags = {
+  owner = "security-platform"
+  costCenter = "cybersecurity"
+}
