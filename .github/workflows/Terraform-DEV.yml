@@ -42,5 +42,7 @@ jobs:
         with:
           terraform_version: 1.9.8
       - run: terraform -chdir=terraform init -reconfigure -backend-config=environments/dev/backend.hcl
+      - name: Import existing DEV resource group
+        run: terraform -chdir=terraform import -var-file=environments/dev/terraform.tfvars azurerm_resource_group.this /subscriptions/${{ vars.AZURE_SUBSCRIPTION_ID }}/resourceGroups/spectre-dev-rg
       - run: terraform -chdir=terraform plan -var-file=environments/dev/terraform.tfvars -out=dev.tfplan
       - run: terraform -chdir=terraform apply -auto-approve dev.tfplan
