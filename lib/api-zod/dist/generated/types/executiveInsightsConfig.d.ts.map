@@ -1,0 +1,1 @@
+{"version":3,"file":"executiveInsightsConfig.d.ts","sourceRoot":"","sources":["../../../src/generated/types/executiveInsightsConfig.ts"],"names":[],"mappings":"AAAA;;;;;GAKG;AACH,OAAO,KAAK,EAAE,cAAc,EAAE,MAAM,kBAAkB,CAAC;AAEvD,MAAM,WAAW,uBAAuB;IACtC,iBAAiB;IACjB,QAAQ,EAAE,MAAM,CAAC;IACjB,SAAS,CAAC,EAAE,MAAM,CAAC;IACnB;;;SAGK;IACL,QAAQ,EAAE,cAAc,EAAE,CAAC;CAC5B"}

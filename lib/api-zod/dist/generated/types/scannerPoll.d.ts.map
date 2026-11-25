@@ -1,0 +1,1 @@
+{"version":3,"file":"scannerPoll.d.ts","sourceRoot":"","sources":["../../../src/generated/types/scannerPoll.ts"],"names":[],"mappings":"AAAA;;;;;GAKG;AACH,OAAO,KAAK,EAAE,OAAO,EAAE,MAAM,WAAW,CAAC;AAEzC,MAAM,WAAW,WAAW;IAC1B,MAAM,EAAE,OAAO,CAAC;IAChB,GAAG,CAAC,EAAE,OAAO,CAAC;IACd,OAAO,CAAC,EAAE,MAAM,CAAC;CAClB"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"teamAuthStatus.d.ts","sourceRoot":"","sources":["../../../src/generated/types/teamAuthStatus.ts"],"names":[],"mappings":"AAAA;;;;;GAKG;AACH,OAAO,KAAK,EAAE,WAAW,EAAE,MAAM,eAAe,CAAC;AAEjD,MAAM,WAAW,cAAc;IAC7B,aAAa,EAAE,OAAO,CAAC;IACvB,UAAU,EAAE,OAAO,CAAC;IACpB,IAAI,EAAE,WAAW,GAAG,IAAI,CAAC;CAC1B"}

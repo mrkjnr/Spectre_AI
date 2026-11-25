@@ -1,0 +1,1 @@
+{"version":3,"file":"gatewayAudit.d.ts","sourceRoot":"","sources":["../../../src/generated/types/gatewayAudit.ts"],"names":[],"mappings":"AAAA;;;;;GAKG;AAEH,MAAM,WAAW,YAAY;IAC3B,EAAE,EAAE,MAAM,CAAC;IACX,WAAW,EAAE,MAAM,CAAC;IACpB,MAAM,EAAE,MAAM,CAAC;IACf,OAAO,EAAE,MAAM,CAAC;CACjB"}
