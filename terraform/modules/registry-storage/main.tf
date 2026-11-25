@@ -32,7 +32,7 @@ resource "azurerm_storage_account" "this" {
   min_tls_version               = "TLS1_2"
   https_traffic_only_enabled    = true
   public_network_access_enabled = false
-  shared_access_key_enabled     = false
+  shared_access_key_enabled     = true
   blob_properties {
     delete_retention_policy { days = 30 }
     container_delete_retention_policy { days = 30 }

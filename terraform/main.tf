@@ -237,7 +237,6 @@ resource "azurerm_monitor_scheduled_query_rules_alert_v2" "readyz" {
     time_aggregation_method = "Count"
     operator                = "GreaterThan"
     threshold               = 5
-    metric_measure_column   = "count_"
     failing_periods {
       minimum_failing_periods_to_trigger_alert = 2
       number_of_evaluation_periods             = 3

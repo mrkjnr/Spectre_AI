@@ -6,3 +6,6 @@ container_app_min_replicas = 0
 container_app_max_replicas = 3
 acr_sku                    = "Premium"
 enable_front_door          = false
+postgres_sku               = "B_Standard_B1ms"
+postgres_zone              = null
+key_vault_administrator_object_ids = ["11cbc270-d01e-4236-a913-06e554e8f2b9"]

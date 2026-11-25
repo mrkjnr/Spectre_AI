@@ -46,7 +46,7 @@ variable "postgres_storage_mb" {
 
 variable "postgres_zone" {
   type    = string
-  default = "1"
+  default = null
 }
 
 variable "container_app_cpu" {
